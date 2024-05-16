@@ -1,0 +1,104 @@
+{% extends "blank.html" %}
+{% load static %}
+
+{% block title %}#Name#{% endblock %}
+
+{% block page_title %}#Name#{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-auto">
+                <a href = "/#name#/insert">
+                    <button type="button" class="btn btn-success">
+                        Add #Name#
+                        <img src="{% static 'icons/add-outline.svg' %}" width="25" height="25" fill="currentColor">
+                    </button>
+                </a>
+            </div>        
+            <div class="col-auto">
+                <a href="pdf" target="_blank">
+                    <button type="button" class="btn btn-primary">
+                        Export
+                        <img src="{% static 'icons/download-outline.svg' %}" width="25" height="25" fill="currentColor">
+                    </button>
+                </a>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="col-md-6">
+                                {% if message != "" %}
+                                    <div class="alert alert-success alert-dismissible">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                        <h5><i class="icon fas fa-check"></i>{{message}}</h5>
+                                    </div>
+                                {% endif %}
+                                {% if error != "" %}
+                                    <div class="alert alert-danger alert-dismissible">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                        <h5><i class="icon fas fa-ban"></i>{{error}}</h5>
+                                    </div>
+                                {% endif %}
+                            </div>                
+                            <table class="table table-bordered">
+                                <thead>    
+#header#
+                                    <th></th>
+                                </thead>  
+                                <tbody>
+                                    {%for elt in data %}
+                                        <tr>
+#rows#
+                                            <td>
+                                                <a href="/#name#/updateForm/{{elt.#id#}}">
+                                                    <button class="btn btn-warning">
+                                                        <img src="{% static 'icons/create-outline.svg' %}" width="25" height="25" fill="currentColor" />
+                                                    </button>
+                                                </a>
+                                                <a href="/#name#/delete/{{elt.#id#}}">
+                                                    <button class="btn btn-danger">
+                                                        <img src="{% static 'icons/trash-outline.svg' %}" width="25" height="25" fill="currentColor" />
+                                                    </button>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {%endfor%}
+                                </tbody> 
+                            </table>
+                        </div>
+                        <div class="card-footer clearfix">
+                            <ul class="pagination float-right">
+                                {% if data.number > 3 %}
+                                    <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+                                    {% if data.number > 4 %}
+                                    <li class="page-item"><span>...</span></li>
+                                    {% endif %}
+                                {% endif %}
+
+                                {% for num in data.paginator.page_range %}
+                                    {% if data.number == num %}
+                                        <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                                    {% elif num > data.number|add:'-3' and num < data.number|add:'3' %}
+                                        <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+
+                                {% if data.number < data.paginator.num_pages|add:'-3' %}
+                                    <li class="page-item"><span>...</span></li>
+                                    <li class="page-item"><a class="page-link" href="?page={{ data.paginator.num_pages }}">{{ data.paginator.num_pages }}</a></li>
+                                {% elif data.number < data.paginator.num_pages|add:'-2' %}
+                                    <li class="page-item"><a class="page-link" href="?page={{ data.paginator.num_pages }}">{{ data.paginator.num_pages }}</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

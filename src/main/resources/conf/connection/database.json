@@ -1,0 +1,17 @@
+{
+    "defaultConnection" : "DefaultConnection",
+    "listConnection": {
+        "DefaultConnection": {
+            "datasource":"jdbc:postgresql://localhost:5432/btp_2",
+            "username":"mamisoa",
+            "password":"prom15",
+            "databaseType":"POSTGRESQL"
+        },
+        "OtherConnection": {
+            "datasource":"jdbc:postgresql://localhost:5432/postgres",
+            "username":"rakharrs",
+            "password":"pixel",
+            "databaseType":"POSTGRESQL"
+        }
+    }
+}

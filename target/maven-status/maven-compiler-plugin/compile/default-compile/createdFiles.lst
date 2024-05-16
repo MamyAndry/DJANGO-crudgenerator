@@ -1,0 +1,14 @@
+django/sourcegenerator/utils/ObjectUtility.class
+django/sourcegenerator/database/DbConnection.class
+django/sourcegenerator/generator/CodeGenerator.class
+django/sourcegenerator/database/DbProperties.class
+django/sourcegenerator/generator/service/controller/ControllerGenerator.class
+django/sourcegenerator/generator/service/view/TypeProperties.class
+django/sourcegenerator/generator/parser/FileUtility.class
+django/sourcegenerator/generator/service/view/ViewGenerator.class
+django/sourcegenerator/generator/parser/JsonUtility.class
+django/sourcegenerator/utils/Misc.class
+django/sourcegenerator/generator/service/models/ModelGenerator.class
+django/sourcegenerator/generator/service/DbService.class
+django/sourcegenerator/properties/DatabaseType.class
+django/sourcegenerator/App.class

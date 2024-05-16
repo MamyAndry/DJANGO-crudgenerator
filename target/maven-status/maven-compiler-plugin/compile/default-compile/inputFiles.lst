@@ -1,0 +1,14 @@
+/home/mamisoa/ITU/L3/Mr_Naina/crudgenerator/src/main/java/django/sourcegenerator/App.java
+/home/mamisoa/ITU/L3/Mr_Naina/crudgenerator/src/main/java/django/sourcegenerator/database/DbConnection.java
+/home/mamisoa/ITU/L3/Mr_Naina/crudgenerator/src/main/java/django/sourcegenerator/generator/service/models/ModelGenerator.java
+/home/mamisoa/ITU/L3/Mr_Naina/crudgenerator/src/main/java/django/sourcegenerator/generator/service/controller/ControllerGenerator.java
+/home/mamisoa/ITU/L3/Mr_Naina/crudgenerator/src/main/java/django/sourcegenerator/utils/Misc.java
+/home/mamisoa/ITU/L3/Mr_Naina/crudgenerator/src/main/java/django/sourcegenerator/database/DbProperties.java
+/home/mamisoa/ITU/L3/Mr_Naina/crudgenerator/src/main/java/django/sourcegenerator/generator/parser/JsonUtility.java
+/home/mamisoa/ITU/L3/Mr_Naina/crudgenerator/src/main/java/django/sourcegenerator/generator/service/DbService.java
+/home/mamisoa/ITU/L3/Mr_Naina/crudgenerator/src/main/java/django/sourcegenerator/generator/parser/FileUtility.java
+/home/mamisoa/ITU/L3/Mr_Naina/crudgenerator/src/main/java/django/sourcegenerator/generator/CodeGenerator.java
+/home/mamisoa/ITU/L3/Mr_Naina/crudgenerator/src/main/java/django/sourcegenerator/utils/ObjectUtility.java
+/home/mamisoa/ITU/L3/Mr_Naina/crudgenerator/src/main/java/django/sourcegenerator/properties/DatabaseType.java
+/home/mamisoa/ITU/L3/Mr_Naina/crudgenerator/src/main/java/django/sourcegenerator/generator/service/view/TypeProperties.java
+/home/mamisoa/ITU/L3/Mr_Naina/crudgenerator/src/main/java/django/sourcegenerator/generator/service/view/ViewGenerator.java

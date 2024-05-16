@@ -1,0 +1,8 @@
+from django.forms import ModelForm
+from .#nameCamel# import #entity#
+
+# Create the form class.
+class #entity#Form(ModelForm):
+    class Meta:
+        model = #entity#
+        fields = [#fields#]

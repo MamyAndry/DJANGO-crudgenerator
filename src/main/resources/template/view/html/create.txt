@@ -1,0 +1,34 @@
+{% extends "blank.html" %}
+{% load static %}
+
+{% block title %}Add #Name#{% endblock %}
+{% block page_title %}Add #Name#{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Add #Name#</h3>
+                    </div>
+                    <div class="card-body">
+                        {% if error != "" %}
+                            <div class="alert alert-danger alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <h5><i class="icon fas fa-ban"></i>{{error}}</h5>
+                            </div>
+                        {% endif %}
+                        <form action="/#name#/insert-#name#" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+#input#
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+                            </div>
+                        </form>
+                    </div>            
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
