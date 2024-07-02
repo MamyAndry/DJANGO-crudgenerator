@@ -19,7 +19,7 @@ public class ControllerGenerator{
     public String getImports(String table ,HashMap<String, String> foreignKeys) throws Exception{
         String res = "from ." + ObjectUtility.formatToCamelCase(table) + " import " + ObjectUtility.formatToCamelCase(ObjectUtility.capitalize(table)) + "\n";
         for(Map.Entry<String, String> set : foreignKeys.entrySet()) {
-            res += "from ." + ObjectUtility.formatToCamelCase(set.getValue()) + " import " + ObjectUtility.formatToCamelCase(ObjectUtility.capitalize(set.getValue())) + "\n";
+            res += "from " + set.getValue() + "." + ObjectUtility.formatToCamelCase(set.getValue()) + " import " + ObjectUtility.formatToCamelCase(ObjectUtility.capitalize(set.getValue())) + "\n";
         }
         return res;
     }

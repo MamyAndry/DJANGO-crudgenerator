@@ -6,13 +6,14 @@ import lombok.Setter;
 
 @Getter @Setter
 public class ModelGenerator {
-    String script = "python manage.py inspectdb #table# > #path#/#entity#.py";
+    String script = "python manage.py inspectdb #table# > #path#/#entity#/#entityCamel#.py";
 
     public String generateModelGenerator(String path, String[] tables) throws Exception{
         String res = ""; 
         for (String table : tables) {
             res += this.getScript()
-                .replace("#entity#", ObjectUtility.formatToCamelCase(table))
+                .replace("#entity#",table)
+                .replace("#entityCamel#", ObjectUtility.formatToCamelCase(table))
                 .replace("#table#", table)
                 .replace("#path#", path)
             + "\n";

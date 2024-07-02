@@ -52,9 +52,6 @@ public class CodeGenerator {
     }
 
     public void generateControllerFile(String table, String path) throws Exception{
-        // FileUtility.createDirectory("controller", path);
-
-        // FileUtility.createDirectory("", path + File.separator + table);
         FileUtility.generateFile(path, ObjectUtility.formatToCamelCase(table) + "View.py", buildController(table));
     }
 
@@ -64,9 +61,6 @@ public class CodeGenerator {
     }
 
     public void generateFormFile(String table, String path) throws Exception{
-        // FileUtility.createDirectory("Form", path);
-
-        // FileUtility.createDirectory("", path + File.separator + table);
         FileUtility.generateFile(path, ObjectUtility.formatToCamelCase(table) + "Form.py", buildForm(table));
     }
 
@@ -151,9 +145,14 @@ public class CodeGenerator {
         this.generateModelGeneratorFile(path, projectName, tables);
         this.generateSideBarFile(tables, viewPath);
         this.generateRoutesFile(tables, path, projectName);
+        String backPath= "";
         for (String table : tables) {
-            this.generateFormFile(table, path);
-            this.generateControllerFile(table, path);
+            backPath = path + File.separator + table;
+            FileUtility.createDirectory("", backPath);
+            FileUtility.generateFile(backPath, "__init__.py", "");
+
+            this.generateFormFile(table, backPath);
+            this.generateControllerFile(table, backPath);
             this.generateRD(table, viewPath);
             this.generateCreate(table, viewPath);
             this.generateUpdate(table, viewPath);

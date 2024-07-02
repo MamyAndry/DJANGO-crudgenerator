@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter @Setter
 public class RoutesGenerator {
     String routesSyntax = "path('#entity#', #entity#View.index, name='#entity#'),\npath('#entity#/insert-#entity#', #entity#View.insertion),\npath('#entity#/insert', #entity#View.insert#Table#Form, name='insertForm-#entity#'),\npath('#entity#/updateForm/<int:id>', #entity#View.update#Table#Form, name='updateForm-#entity#'),\npath('#entity#/update-#entity#', #entity#View.update#Table#),\npath('#entity#/delete/<int:id>', #entity#View.delete#Table#),\n";
-    String importSyntax  = "from #project# import  #entity#View\n";
+    String importSyntax  = "from #project#.#path# import  #entity#View\n";
     String pathSyntax = "<li class=\"nav-item\">\n\t<a href=\"#path#\" class=\"nav-link\">\n\t\t<i class=\"fas fa-circle nav-icon\"></i>\n\t\t<p> #Name# </p>\n\t</a>\n</li>\n";
     
     public String generatePath(String[] tables){
